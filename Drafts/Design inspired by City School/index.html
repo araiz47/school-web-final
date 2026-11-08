@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eden House Public School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rouge+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="branding">
+                <img src="logo.jpg" alt="Eden House Public School logo">
+                <h2>Eden House Public School</h2>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="#admissions">Admissions</a>
+                <a href="#academics">Academics</a>
+                <a href="#scholarship">Youth Scholarship Program</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contacts">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero-section" id="home">
+            <div class="hero-content">
+                <h1>Shaping Bright Futures</h1>
+                <p>Quality Education, strong values, and a nurturing environment for every child.</p>
+                <div class="hero-buttons">
+                    <a href="#admissions" class="btn btn-primary">Apply Now</a>
+                    <a href="about.html" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission -->
+        <section class="mission">
+            <div class="mission-content">
+                <img src="school.jpg" alt="Eden House Public School building">
+                <div class="mission-text">
+                    <h2>Our Mission</h2>
+                    <p>To promote a culture of educational excellence within a caring and secure Islamic environment enriched with the values of discipline, leadership skills, mutual care, respect, integrity, loyalty and simplicity, which extends beyond the school into the wider community</p>
+                    <a href="about.html#mission">Read More...</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key elements of the mission (cards) -->
+        <section class="academics" id="academics">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Educational Excellence</h3>
+                        <p>A belief that everybody has the potential to succeed within a high quality and intellectually challenging educational environment</p>
+                        <a href="about.html">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Character Development</h3>
+                        <p>A cohesive identity so our pupils, parents and communities can feel a strong sense of belonging to the EHPS "family."</p>
+                        <a href="about.html">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Service to Communities</h3>
+                        <p>A determination to develop outstanding Pakistani citizens who are proud of and contribute to social and economic prosperity.</p>
+                        <a href="about.html">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision -->
+        <section class="vision-section">
+            <div class="vision-content">
+                <h2>Our Vision</h2>
+                <p>At Eden House Public School, we envision a future where every child, regardless of financial background, has access to high-quality education and an inspiring environment. Our mission is to bridge the gap between affordability and excellence, ensuring that young learners receive the knowledge, skills and values needed to thrive in their lives</p>
+                <a href="about.html#vision">Read More...</a>
+            </div>
+        </section>
+
+        <!-- Core values -->
+        <section class="core-values">
+            <h2>Core Values</h2>
+            <p>Eden House Public School is committed to</p>
+            <div class="core-value">
+                <h3>Climate of Love and Care</h3>
+                <p>We enhance our learning environments and recognize the strengths and needs of all students through an ethos of caring for oneself, others, and the community.</p>
+            </div>
+            <div class="core-value">
+                <h3>Honouring the Whole Child</h3>
+                <p>We focus on all aspects of a child's education, including academic growth, extracurricular pursuits, emotional intelligence and resilience, and physical well-being</p>
+            </div>
+            <div class="core-value">
+                <h3>Innovative Instruction</h3>
+                <p>We offer academic experiences that inspire all students to build agency and fully engage in learning</p>
+            </div>
+            <div class="core-value">
+                <h3>Equity and Social Justice</h3>
+                <p>We are committed to access, equity, diversity, anti-racism, human rights and participation in our community.</p>
+            </div>
+        </section>
+        <section class="admissions" id="admissions">
+    <div class="admissions-content">
+
+        <div class="admissions-info">
+            <h2>Admission Inquiry</h2>
+            <p>Interested in joining the Eden House family? Fill in the form and our admissions team will get back to you with details about enrollment, fees, and the next steps.</p>
+            <ul>
+                <li>Submit the inquiry form</li>
+                <li>We contact you to arrange a visit or test</li>
+                <li>Complete enrollment</li>
+            </ul>
+        </div>
+
+        <form class="inquiry-form" action="#" method="post">
+            <div class="form-row">
+                <label for="parent-name">Parent / Guardian Name</label>
+                <input type="text" id="parent-name" name="parent-name" required>
+            </div>
+
+            <div class="form-row">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-row">
+                <label for="child-name">Child's Name</label>
+                <input type="text" id="child-name" name="child-name" required>
+            </div>
+
+            <div class="form-row">
+                <label for="class-level">Class Applying For</label>
+                <select id="class-level" name="class-level" required>
+                    <option value="">Select a class</option>
+                    <option>Playgroup</option>
+                    <option>Nursery</option>
+                    <option>Prep</option>
+                    <option>Class 1 - 5</option>
+                    <option>Class 6 - 8</option>
+                    <option>Class 9 - 10</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="message">Message (optional)</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="inquiry-btn">Send Inquiry</button>
+        </form>
+
+    </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <img src="logo.jpg" alt="Eden House Public School logo">
+                <h3>Eden House Public School</h3>
+                <p>Quality education, strong values, and a nurturing environment for every child.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About</a>
+                <a href="#admissions">Admissions</a>
+                <a href="#academics">Academics</a>
+                <a href="#scholarship">Youth Scholarship Program</a>
+                <a href="#contacts">Contact Us</a>
+            </div>
+
+            <div class="footer-col" id="contacts">
+                <h4>Contact</h4>
+                <p>Phone: +92 000 0000000</p>
+                <p>Email: placeholder@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Eden House Public School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.querySelector(".menu-toggle");
+        const links = document.querySelector(".nav-links");
+
+        toggle.addEventListener("click", () => {
+            const isOpen = links.classList.toggle("open");
+            toggle.setAttribute("aria-expanded", isOpen);
+        });
+
+        // close the menu after tapping a link
+        links.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => links.classList.remove("open"));
+        });
+    </script>
+</body>
+</html>

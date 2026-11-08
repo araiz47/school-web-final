@@ -1,0 +1,1131 @@
+/* =========================================================
+   Eden House Public School - style.css
+
+   1. Variables & base      6. Home sections
+   2. Header / navbar       7. About page
+   3. Hero                  8. Admissions
+   4. Shared components     9. Footer
+   5. Section layout       10. Responsive
+   ========================================================= */
+
+/* ---------- 1. Variables & base ---------- */
+:root {
+    --navy: #0A2A5E;
+    --royal: #1553B6;
+    --pale: #E3EEFF;
+    --gold: #FFC83D;
+    --text: #12263F;
+
+    /* core values palette */
+    --ink: #17324D;
+    --muted: #52697D;
+    --steel: #246BA6;
+
+    --shadow: 0 4px 16px rgba(10, 42, 94, 0.12);
+    --ease: 0.2s ease;
+    --container: 1100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;      /* sticky header won't cover the section you jump to */
+}
+
+body {
+    background-color: var(--pale);
+    color: var(--text);
+    font-family: "Roboto", sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ---------- 2. Header / navbar ---------- */
+header {
+    background: linear-gradient(90deg, var(--navy), var(--royal));
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(10, 42, 94, 0.3);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 10px 30px;
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+    flex-shrink: 0;
+}
+
+.branding img {
+    height: 65px;
+    width: 65px;
+}
+
+.branding h2 {
+    font-family: "Rouge Script", cursive;
+    font-size: 2.2rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 8px 12px;
+    transition: var(--ease);
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+    transform: translateX(4px);
+}
+
+.nav-links a.has-news::after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: 6px;
+    vertical-align: super;
+    background-color: var(--gold);
+    border-radius: 50%;
+}
+
+/* Hamburger button: hidden on desktop, shown in the 900px media query */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ---------- 3. Hero (home + about share one layout) ---------- */
+.hero-section,
+.about-hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                      url("images/hero.jpeg");
+}
+
+.about-hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                      var(--hero-image, url("images/about.jpeg"));
+}
+
+.hero-admissions { --hero-image: url("images/admissions.jpeg"); }
+.hero-academics { --hero-image: url("images/secondary.PNG"); }
+.hero-news { --hero-image: url("images/news3.jpg"); }
+.hero-scholarship { --hero-image: url("images/scholarship.jpeg"); }
+.hero-gallery { --hero-image: url("images/gallery4.jpeg "); }
+.hero-contact { --hero-image: url("images/school.jpeg"); }
+
+
+
+
+.hero-content,
+.about-hero-content {
+    max-width: 700px;
+    color: white;
+}
+
+.hero-content h1,
+.about-hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+}
+
+.hero-content p,
+.about-hero-content p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* ---------- 4. Shared components ---------- */
+
+/* Buttons */
+.btn {
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: var(--ease);
+}
+
+.btn-primary {
+    background-color: var(--gold);
+    color: var(--navy);
+}
+
+.btn-primary:hover {
+    background-color: white;
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: var(--royal);
+}
+
+/* Round logo badge (navbar + footer) */
+.branding img,
+.footer-col img {
+    object-fit: contain;
+    background-color: white;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+/* "Read more" text links with a gold underline */
+.mission-text a,
+.card-body a,
+.vision-content a {
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 2px;
+    transition: var(--ease);
+}
+
+.mission-text a,
+.card-body a {
+    color: var(--royal);
+}
+
+.mission-text a:hover,
+.card-body a:hover {
+    color: var(--navy);
+    border-bottom-color: var(--navy);
+}
+
+.vision-content a {
+    color: white;
+}
+
+.vision-content a:hover {
+    color: var(--gold);
+}
+
+/* White card surface with a soft shadow */
+.card,
+.info-card,
+.inquiry-form {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+/* Gold top accent */
+.info-card,
+.inquiry-form {
+    border-top: 4px solid var(--gold);
+}
+
+/* Section headings and intro text */
+.section-title {
+    text-align: center;
+    color: var(--royal);
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+/* Card grid */
+.cards {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.form-status {
+    margin-top: 14px;
+    font-weight: 500;
+}
+
+.form-status.success {
+    color: #1a7f4b;
+}
+
+.form-status.error {
+    color: #b3261e;
+}
+
+/* hides the spam-trap field without removing it from the page */
+.visually-hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+/* ---------- 5. Section layout (shared by several sections) ---------- */
+.mission,
+.academics,
+.key-elements,
+.values,
+.about-core-values {
+    padding: 60px 20px;
+}
+
+.vision-section,
+.principal,
+.admissions {
+    padding: 70px 20px;
+}
+
+/* Two-column "image + text" rows: they stack on small screens by themselves */
+.mission-content,
+.principal-content,
+.admissions-content {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Big section heading + body text used in text blocks */
+.mission-text h2,
+.vision-content h2,
+.principal-text h2,
+.admissions-info h2 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+}
+
+.mission-text p,
+.vision-content p,
+.principal-text p,
+.admissions-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.principal-text h2,
+.admissions-info h2 {
+    color: var(--royal);
+}
+
+/* ---------- 6. Home sections ---------- */
+
+/* Mission */
+.mission-content {
+    max-width: 1300px;
+    gap: 40px;
+}
+
+.mission-content img {
+    flex: 2 1 420px;        /* image takes about 2/3 of the row, wraps below 420px */
+    min-width: 0;
+    width: 100%;
+    height: auto;           /* shows the whole image, no cropping */
+    border-radius: 10px;
+}
+
+.mission-text {
+    flex: 1 1 320px;
+    color: black;
+}
+
+/* Key elements cards */
+.card {
+    overflow: hidden;       /* clips the image to the rounded corners */
+    transition: 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(10, 42, 94, 0.2);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;      /* all card images end up the same size */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h3 {
+    color: var(--royal);
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+/* Vision */
+.vision-section {
+    background: linear-gradient(135deg, var(--navy), var(--royal));
+}
+
+.vision-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.vision-content h2 {
+    color: var(--gold);
+}
+
+/* Core values (mobile first: one column, two columns from 768px) */
+.core-values {
+    padding: 55px 6%;
+    background-color: #F7FBFF;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.core-values > h2 {
+    font-size: 2rem;
+    color: var(--ink);
+}
+
+.core-values > p {
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+.core-value {
+    background-color: white;
+    padding: 25px 20px;
+    border: 1px solid #D8EAF8;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(23, 50, 77, 0.07);
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.core-value:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(23, 50, 77, 0.12);
+    border-color: #91C8EF;
+}
+
+.core-value h3 {
+    font-size: 1.25rem;
+    color: var(--steel);
+    margin-bottom: 15px;
+}
+
+.core-value p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+/* ---------- 7. About page ---------- */
+
+/* Principal's message */
+.principal-photo {
+    flex: 0 1 500px;
+    margin: 0 auto;            /* centers the photo when it stacks on mobile */
+}
+
+.principal-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: auto;       /* same frame shape for any photo */
+    height: auto;
+    object-fit: cover;
+    object-position: center top;   /* keeps the face in view */
+    border: 8px solid white;
+    border-radius: 12px;
+    box-shadow: 12px 12px 0 var(--gold);   /* offset gold frame */
+}
+
+.principal-photo figcaption {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.principal-photo strong {
+    display: block;
+    color: var(--royal);
+    font-size: 1.15rem;
+}
+
+.principal-photo span {
+    font-size: 0.95rem;
+}
+
+.principal-text {
+    flex: 1 1 340px;
+}
+
+/* Key elements + core values info cards */
+.about-core-values {
+    background-color: white;       /* light band to separate it from Values */
+}
+
+.info-card {
+    padding: 28px 24px;
+    text-align: center;
+}
+
+.about-core-values .info-card {
+    background-color: var(--pale); /* so cards show up on the white band */
+    box-shadow: none;
+}
+
+.info-card h3 {
+    color: var(--royal);
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    line-height: 1.6;
+}
+
+.info-number {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 50%;
+    background-color: var(--royal);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+/* Values */
+.value-grid {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.value-item {
+    background-color: white;
+    padding: 20px 22px;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(10, 42, 94, 0.1);
+}
+
+.value-item h3 {
+    color: var(--royal);
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+}
+
+.value-item p {
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* ---------- 8. Admissions ---------- */
+.admissions-content {
+    align-items: flex-start;
+}
+
+.admissions-info {
+    flex: 1 1 320px;
+}
+
+.admissions-info ul {
+    padding-left: 22px;
+    line-height: 2;
+    font-weight: 500;
+}
+
+.admissions-info li::marker {
+    color: var(--gold);
+}
+
+.inquiry-form {
+    flex: 1 1 380px;
+    padding: 32px;
+}
+
+.form-row {
+    margin-bottom: 18px;
+}
+
+.form-row label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--navy);
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text);
+    border: 1px solid #C5D7EE;
+    border-radius: 6px;
+    background-color: white;
+    transition: var(--ease);
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+    outline: none;
+    border-color: var(--royal);
+    box-shadow: 0 0 0 3px rgba(21, 83, 182, 0.15);
+}
+
+.form-row textarea {
+    resize: vertical;
+}
+
+.inquiry-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--royal);
+    color: white;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--ease);
+}
+
+.inquiry-btn:hover {
+    background-color: var(--navy);
+}
+
+/* ---------- 9. Footer ---------- */
+.footer {
+    background: linear-gradient(90deg, var(--navy), var(--royal));
+    color: white;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 50px 20px 30px;
+    display: flex;
+    flex-wrap: wrap;          /* stacks on small screens, no media query needed */
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1 1 220px;
+}
+
+.footer-col img {
+    display: block;
+    height: 70px;
+    width: 70px;
+    margin-bottom: 12px;
+}
+
+.footer-col h3 {
+    font-family: "Rouge Script", cursive;
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.footer-col h4 {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+    color: var(--gold);
+}
+
+.footer-col p {
+    line-height: 1.7;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.footer-col a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    transition: var(--ease);
+}
+
+.footer-col a:hover {
+    color: var(--gold);
+    padding-left: 4px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    padding: 16px 20px;
+    font-size: 0.85rem;
+}
+
+/* =========================================================
+   10. Responsive (keep all media queries down here)
+   ========================================================= */
+
+/* Tablet and up: core values in two columns */
+@media (min-width: 768px) {
+    .core-values {
+        padding: 80px 8%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .core-values > h2 {
+        font-size: 2.5rem;
+    }
+
+    .core-values > p {
+        font-size: 1.1rem;
+    }
+
+    .core-values > h2,
+    .core-values > p {
+        grid-column: 1 / -1;       /* heading and intro span both columns */
+    }
+
+    .core-value {
+        padding: 30px 25px;
+    }
+}
+
+/* Mobile navbar: hamburger menu */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;                 /* hidden until the button is clicked */
+        position: absolute;
+        top: 100%;                     /* sits right below the header */
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background-color: var(--navy);
+        padding: 10px 20px 20px;
+    }
+
+    .nav-links.open {
+        display: flex;                 /* shown when JS adds the "open" class */
+    }
+
+    .nav-links a {
+        padding: 14px 12px;
+    }
+
+    .branding h2 {
+        font-size: 1.5rem;
+    }
+
+    .branding img {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+    .hero-content h1,
+    .about-hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .inquiry-form {
+        padding: 22px;
+    }
+}
+
+
+/* ---------- Admissions page ---------- */
+.page-section {
+    padding: 60px 20px;
+}
+
+.page-section.alt {
+    background-color: white;
+}
+
+.notice {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 20px 24px;
+    background-color: white;
+    border-left: 5px solid var(--gold);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    line-height: 1.7;
+}
+
+.cards.steps {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.page-section.alt .info-card {
+    background-color: var(--pale);   /* so cards show up on the white band */
+    box-shadow: none;
+}
+
+.table-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    overflow-x: auto;                /* table scrolls sideways on small phones */
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.info-table th,
+.info-table td {
+    padding: 14px 18px;
+    text-align: left;
+}
+
+.info-table th {
+    background-color: var(--royal);
+    color: white;
+}
+
+.info-table tbody tr:nth-child(even) td {
+    background-color: var(--pale);
+}
+
+.checklist {
+    max-width: 800px;
+    margin: 0 auto;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+}
+
+.checklist li {
+    position: relative;
+    padding: 14px 18px 14px 48px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(10, 42, 94, 0.1);
+}
+
+.checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 18px;
+    color: var(--royal);
+    font-weight: bold;
+}
+
+.faq {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq details {
+    background-color: var(--pale);
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.faq summary {
+    padding: 16px 20px;
+    font-weight: bold;
+    color: var(--royal);
+    cursor: pointer;
+}
+
+.faq details p {
+    padding: 0 20px 16px;
+    line-height: 1.7;
+}
+
+/* ---------- Academics page ---------- */
+
+/* Skip these two rules if you already added them for the Admissions page */
+.page-section {
+    padding: 60px 20px;
+}
+
+.page-section.alt {
+    background-color: white;
+}
+
+.page-section.alt .info-card {
+    background-color: var(--pale);   /* so info cards show up on the white band */
+    box-shadow: none;
+}
+
+.card-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 10px;
+    background-color: var(--pale);
+    color: var(--royal);
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 999px;
+}
+
+.vision-content .btn {
+    display: inline-block;
+    border-bottom: none;             /* cancels the underline style meant for text links */
+    padding: 12px 28px;
+    color: var(--navy);
+}
+
+.card-meta {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.levels .card img {
+    height: 240px;
+    object-fit: contain;
+    background-color: var(--pale);
+}
+
+/* ---------- Gallery ---------- */
+.gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background-color: white;
+    color: var(--royal);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid var(--royal);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: var(--ease);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--royal);
+    color: white;
+}
+
+.gallery-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+.gallery-item[hidden] {
+    display: none;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 24px 14px 10px;
+    color: white;
+    font-size: 0.9rem;
+    background: linear-gradient(transparent, rgba(10, 42, 94, 0.85));
+}
+
+/* Enlarged photo viewer */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.85);
+    cursor: zoom-out;
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 8px;
+}
+
+/* ---------- Contact page ---------- */
+.contact-split {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;           /* form and map stack on small screens */
+    gap: 40px;
+    align-items: stretch;      /* map matches the form's height */
+    justify-content: center;
+}
+
+.contact-split .inquiry-form {
+    flex: 0 1 600px;     /* base width 600px, doesn't grow, still shrinks on phones */
+}
+
+/* Links inside the contact cards */
+.info-card a,
+.section-subtitle a {
+    color: var(--royal);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.info-card a:hover,
+.section-subtitle a:hover {
+    color: var(--navy);
+}
+
+/* Leadership messages */
+.principal.alt {
+    background-color: white;
+}
+
+.principal.reverse .principal-content {
+    flex-direction: row-reverse;   /* photo on the right */
+}
+
+/* ---------- News page ---------- */
+.notice-list {
+    max-width: 800px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.notice-list li {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    padding: 16px 20px;
+    background-color: white;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(10, 42, 94, 0.1);
+}
+
+.notice-date {
+    flex: 0 0 110px;
+    font-weight: bold;
+    color: var(--royal);
+}
+
+.news-more {
+    text-align: center;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+    .notice-list li {
+        flex-direction: column;
+        gap: 4px;
+    }
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Eden House Public School</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rouge+Script&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                    <a href="index.html" class="branding">
+                        <img src="images/logo.jpg" alt="school-logo">
+                        <h2>Eden House Public School</h2>
+                    </a>
+                    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+                    <div class="nav-links">
+                        <a href="about.html">About</a>
+                        <a href="admissions.html">Admissions</a>
+                        <a href="academics.html">Academics</a>
+                        <a href="news.html">News and Events</a>
+                        <a href="scholarship.html">Youth Scholorship Program</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="contacts.html">Contact Us</a>
+                    </div>
+                </nav>
+    </header>
+
+        <main>
+    <section class="about-hero-section hero-admissions">
+    <div class="about-hero-content">
+        <h1>Admissions</h1>
+        <p>Join the Eden House family. Start with a quick inquiry, then visit our campus to complete admission.</p>
+        <div class="hero-buttons">
+            <a href="#inquiry" class="btn btn-primary">Send Inquiry</a>
+        </div>
+    </div>
+</section>
+    
+
+    <!-- On-campus notice -->
+    <section class="page-section">
+        <div class="notice">
+            <strong>Admissions are completed on campus only.</strong>
+            The online form lets us know you're interested and helps us prepare for your visit. No fee or documents are collected online.
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="page-section">
+        <h2 class="section-title">How Admission Works</h2>
+        <div class="cards steps">
+            <div class="info-card">
+                <span class="info-number">1</span>
+                <h3>Send an Inquiry</h3>
+                <p>Fill in the form below so we can contact you.</p>
+            </div>
+            <div class="info-card">
+                <span class="info-number">2</span>
+                <h3>Visit the Campus</h3>
+                <p>Meet our admissions team and tour the school.</p>
+            </div>
+            <div class="info-card">
+                <span class="info-number">3</span>
+                <h3>Assessment</h3>
+                <p>A short, friendly interview or entry test, depending on the class.</p>
+            </div>
+            <div class="info-card">
+                <span class="info-number">4</span>
+                <h3>Confirm Admission</h3>
+                <p>Submit documents and pay the fee at the admissions office.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes and ages -->
+    <section class="page-section alt">
+        <h2 class="section-title">Classes and Age Requirements</h2>
+        <div class="table-wrap">
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Minimum Age</th>
+                        <th>Requirement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Playgroup</td><td>4 years old</td><td>Interaction</td></tr>
+                    <tr><td>Nursery</td><td>5 years old</td><td>Interaction</td></tr>
+                    <tr><td>Prep</td><td>6 years old</td><td>Interaction</td></tr>
+                    <tr><td>Class 1 - 5</td><td>7 years old and above</td><td>Entry test</td></tr>
+                    <tr><td>Class 6 - 10</td><td>12 years old and above</td><td>Entry test + previous result</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Documents -->
+    <section class="page-section">
+        <h2 class="section-title">Documents to Bring</h2>
+        <ul class="checklist">
+            <li>Child's B-Form or birth certificate</li>
+            <li>Parent / guardian CNIC copy</li>
+            <li>Passport-size photographs of the child</li>
+            <li>Previous school result card (for Class 1 and above)</li>
+            <li>School leaving certificate (if transferring)</li>
+        </ul>
+    </section>
+
+    <!-- Visit info -->
+    <section class="page-section alt">
+        <h2 class="section-title">Visit Us</h2>
+        <div class="cards">
+            <div class="info-card">
+                <h3>Admission Office Hours</h3>
+                <p>Monday to Friday,</p>
+            </div>
+            <div class="info-card">
+                <h3>Contact</h3>
+                <p>Phone: +92 000 0000000<br>Email: placeholder@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry form -->
+    <section class="admissions" id="inquiry">
+        <div class="admissions-content">
+
+            <div class="admissions-info">
+                <h2>Admission Inquiry</h2>
+                <p>Fill in the form and our admissions team will call you to arrange a campus visit. Admission itself is completed in person.</p>
+                <ul>
+                    <li>We'll contact you within a few working days</li>
+                    <li>Bring the documents listed above on your visit</li>
+                    <li>Seats are confirmed on campus after assessment</li>
+                </ul>
+            </div>
+
+            <form class="inquiry-form" action="https://formspree.io/f/mgaaaorq" method="post">
+                <div class="form-row">
+                    <label for="parent-name">Parent / Guardian Name</label>
+                    <input type="text" id="parent-name" name="parent-name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email (optional)</label>
+                    <input type="email" id="email" name="email">
+                </div>
+
+                <div class="form-row">
+                    <label for="child-name">Child's Name</label>
+                    <input type="text" id="child-name" name="child-name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="class-level">Class Applying For</label>
+                    <select id="class-level" name="class-level" required>
+                        <option value="">Select a class</option>
+                        <option>Playgroup</option>
+                        <option>Nursery</option>
+                        <option>Prep</option>
+                        <option>Class 1 - 5</option>
+                        <option>Class 6 - 10</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="previous-school">Previous School (if any)</label>
+                    <input type="text" id="previous-school" name="previous-school">
+                </div>
+
+                <div class="form-row">
+                    <label for="visit-date">Preferred Visit Date</label>
+                    <input type="date" id="visit-date" name="visit-date">
+                </div>
+
+                <div class="form-row">
+                    <label for="message">Message (optional)</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                
+                <input type="text" name="_gotcha" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button type="submit" class="inquiry-btn">Send Inquiry</button>
+                <p class="form-status" role="status"></p>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="page-section alt">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+            <details>
+                <summary>Can I apply online?</summary>
+                <p>The online form is an inquiry only. Admission is completed on campus with the required documents.</p>
+            </details>
+            <details>
+                <summary>What are the fees?</summary>
+                <p>The fee structure is shared at the admissions office.</p>
+            </details>
+            <details>
+                <summary>Is there an entry test?</summary>
+                <p>Younger classes have a friendly interaction, and Class 1 and above have a short test.</p>
+            </details>
+            <details>
+                <summary>When does the new session start?</summary>
+                <p>The information is shared at the admissions office.</p>
+            </details>
+        </div>
+    </section>
+
+        
+        </main>
+
+        <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <img src="images/logo.jpg" alt="Eden House Public School logo">
+                <h3>Eden House Public School</h3>
+                <p>Quality education, strong values, and a nurturing environment for every child.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About</a>
+                <a href="admissions.html">Admissions</a>
+                <a href="academics.html">Academics</a>
+                <a href="news.html">News and Events</a>
+                <a href="scholarship.html">Youth Scholarship Program</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contacts.html">Contact Us</a>
+            </div>
+
+            <div class="footer-col" id="contacts">
+                <h4>Contact</h4>
+                <p>Phone: +92 000 0000000</p>
+                <p>Email: placeholder@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Eden House Public School. All rights reserved.</p>
+        </div>
+    </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

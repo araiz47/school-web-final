@@ -1,0 +1,788 @@
+/* =========================================================
+   Eden House Public School - style.css
+   ========================================================= */
+
+:root {
+    --navy: #0A2A5E;
+    --royal: #1553B6;
+    --bright: #2F80ED;
+    --pale: #E3EEFF;
+    --gold: #FFC83D;
+    --text: #12263F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;      /* sticky header won't cover the section you jump to */
+}
+
+body {
+    background-color: var(--pale);
+    color: var(--text);
+    font-family: "Roboto", sans-serif;
+}
+
+/* ---------- Header / Navbar ---------- */
+header {
+    background: linear-gradient(90deg, var(--navy), var(--royal));
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(10, 42, 94, 0.3);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 10px 30px;
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+    flex-shrink: 0;
+}
+
+.branding img {
+    height: 65px;
+    width: 65px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: white;
+    padding: 4px;
+}
+
+.branding h2 {
+    font-family: "Rouge Script", cursive;
+    font-size: 2.2rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 8px 12px;
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+    transform: translateX(4px);
+}
+
+/* Hamburger button: hidden on desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ---------- Hero (home + about share the same layout) ---------- */
+.hero-section,
+.about-hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                      url("hero-image.jpg");
+}
+
+.about-hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                      url("school.jpg");
+}
+
+.hero-content,
+.about-hero-content {
+    max-width: 700px;
+    color: white;
+}
+
+.hero-content h1,
+.about-hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+}
+
+.hero-content p,
+.about-hero-content p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--gold);
+    color: var(--navy);
+}
+
+.btn-primary:hover {
+    background-color: white;
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: var(--royal);
+}
+
+/* ---------- Mission ---------- */
+.mission {
+    padding: 60px 20px;
+}
+
+.mission-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;        /* stacks on small screens automatically */
+    align-items: center;    /* vertically centers text next to the image */
+    gap: 40px;
+    color: black;
+}
+
+.mission-content img {
+    flex: 2 1 420px;        /* image takes about 2/3 of the row, wraps below 420px */
+    min-width: 0;
+    width: 100%;
+    height: auto;           /* shows the whole image, no cropping */
+    border-radius: 10px;
+}
+
+.mission-text {
+    flex: 1 1 320px;
+}
+
+.mission-text h2 {
+    color: black;
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+}
+
+.mission-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    color: black;
+}
+
+.mission-text a {
+    display: inline-block;
+    color: var(--royal);
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 2px;
+    transition: 0.2s ease;
+}
+
+.mission-text a:hover {
+    color: var(--navy);
+    border-bottom-color: var(--navy);
+}
+
+/* ---------- Cards (key elements / academics) ---------- */
+.academics {
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--royal);
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.cards {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;            /* clips the image to the rounded corners */
+    box-shadow: 0 4px 16px rgba(10, 42, 94, 0.12);
+    transition: 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(10, 42, 94, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;           /* all card images end up the same size */
+    display: block;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h3 {
+    color: var(--royal);
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.card-body a {
+    color: var(--royal);
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 2px;
+    transition: 0.2s ease;
+}
+
+.card-body a:hover {
+    color: var(--navy);
+    border-bottom-color: var(--navy);
+}
+
+/* ---------- Vision ---------- */
+.vision-section {
+    background: linear-gradient(135deg, var(--navy), var(--royal));
+    padding: 70px 20px;
+}
+
+.vision-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.vision-content h2 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+    color: var(--gold);
+}
+
+.vision-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.vision-content a {
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 2px;
+    transition: 0.2s ease;
+}
+
+.vision-content a:hover {
+    color: var(--gold);
+}
+
+/* ---------- Core Values (home page) ---------- */
+.core-values {
+    padding: 55px 6%;
+    background-color: #F7FBFF;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;          /* one column on mobile */
+    gap: 20px;
+}
+
+/* Heading and intro paragraph */
+.core-values > h2 {
+    font-size: 2rem;
+    color: #17324D;
+}
+
+.core-values > p {
+    font-size: 1rem;
+    color: #52697D;
+}
+
+/* Individual value cards */
+.core-value {
+    background-color: #FFFFFF;
+    padding: 25px 20px;
+    border: 1px solid #D8EAF8;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(23, 50, 77, 0.07);
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.core-value h3 {
+    font-size: 1.25rem;
+    color: #246BA6;
+    margin-bottom: 15px;
+}
+
+.core-value p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #52697D;
+}
+
+.core-value:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(23, 50, 77, 0.12);
+    border-color: #91C8EF;
+}
+
+/* ---------- About page ---------- */
+.key-elements,
+.values,
+.about-core-values {
+    padding: 60px 20px;
+}
+
+.about-core-values {
+    background-color: white;       /* light band to separate it from Values */
+}
+
+.info-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(10, 42, 94, 0.12);
+    border-top: 4px solid var(--gold);
+}
+
+.about-core-values .info-card {
+    background-color: var(--pale); /* so cards show up on the white band */
+    box-shadow: none;
+}
+
+.info-card h3 {
+    color: var(--royal);
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    line-height: 1.6;
+}
+
+.info-number {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 50%;
+    background-color: var(--royal);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.value-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.value-item {
+    background-color: white;
+    padding: 20px 22px;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(10, 42, 94, 0.1);
+}
+
+.value-item h3 {
+    color: var(--royal);
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+}
+
+.value-item p {
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    background: linear-gradient(90deg, var(--navy), var(--royal));
+    color: white;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 20px 30px;
+    display: flex;
+    flex-wrap: wrap;          /* stacks on small screens, no media query needed */
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1 1 220px;
+}
+
+.footer-col img {
+    display: block;
+    height: 70px;
+    width: 70px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.footer-col h3 {
+    font-family: "Rouge Script", cursive;
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.footer-col h4 {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+    color: var(--gold);
+}
+
+.footer-col p {
+    line-height: 1.7;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.footer-col a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    transition: 0.2s ease;
+}
+
+.footer-col a:hover {
+    color: var(--gold);
+    padding-left: 4px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    padding: 16px 20px;
+    font-size: 0.85rem;
+}
+
+/* =========================================================
+   Responsive rules (keep these at the bottom)
+   ========================================================= */
+
+/* Tablet and up: core values in two columns */
+@media (min-width: 768px) {
+    .core-values {
+        padding: 80px 8%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .core-values > h2 {
+        font-size: 2.5rem;
+    }
+
+    .core-values > h2,
+    .core-values > p {
+        grid-column: 1 / -1;       /* heading and intro span both columns */
+    }
+
+    .core-values > p {
+        font-size: 1.1rem;
+    }
+
+    .core-value {
+        padding: 30px 25px;
+    }
+}
+
+/* Mobile navbar: hamburger menu */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;                 /* hidden until the button is clicked */
+        position: absolute;
+        top: 100%;                     /* sits right below the header */
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background-color: var(--navy);
+        padding: 10px 20px 20px;
+    }
+
+    .nav-links.open {
+        display: flex;                 /* shown when JS adds the "open" class */
+    }
+
+    .nav-links a {
+        padding: 14px 12px;
+    }
+
+    .branding h2 {
+        font-size: 1.5rem;
+    }
+
+    .branding img {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+/* Phones: smaller hero text */
+@media (max-width: 600px) {
+    .hero-content h1,
+    .about-hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+
+/* ---------- Principal's message ---------- */
+.principal {
+    padding: 70px 20px;
+}
+
+.principal-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;           /* stacks on small screens, no media query needed */
+    align-items: center;
+    gap: 50px;
+}
+
+.principal-photo {
+    flex: 0 1 300px;
+    margin: 0 auto;            /* centers the photo when it stacks on mobile */
+}
+
+.principal-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;       /* same frame shape for any photo */
+    object-fit: cover;
+    object-position: center top;   /* keeps the face in view */
+    border: 6px solid white;
+    border-radius: 12px;
+    box-shadow: 12px 12px 0 var(--gold);   /* the offset gold frame */
+}
+
+.principal-photo figcaption {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.principal-photo strong {
+    display: block;
+    color: var(--royal);
+    font-size: 1.15rem;
+}
+
+.principal-photo span {
+    font-size: 0.95rem;
+}
+
+.principal-text {
+    flex: 1 1 340px;
+}
+
+.principal-text h2 {
+    color: var(--royal);
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+}
+
+.principal-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+/* ---------- Admission inquiry ---------- */
+.admissions {
+    padding: 70px 20px;
+}
+
+.admissions-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;            /* stacks on small screens */
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.admissions-info {
+    flex: 1 1 320px;
+}
+
+.admissions-info h2 {
+    color: var(--royal);
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+}
+
+.admissions-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.admissions-info ul {
+    padding-left: 22px;
+    line-height: 2;
+    font-weight: 500;
+}
+
+.admissions-info li::marker {
+    color: var(--gold);
+}
+
+.inquiry-form {
+    flex: 1 1 380px;
+    background-color: white;
+    padding: 32px;
+    border-radius: 12px;
+    border-top: 4px solid var(--gold);
+    box-shadow: 0 4px 20px rgba(10, 42, 94, 0.12);
+}
+
+.form-row {
+    margin-bottom: 18px;
+}
+
+.form-row label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--navy);
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text);
+    border: 1px solid #C5D7EE;
+    border-radius: 6px;
+    background-color: white;
+    transition: 0.2s ease;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+    outline: none;
+    border-color: var(--royal);
+    box-shadow: 0 0 0 3px rgba(21, 83, 182, 0.15);
+}
+
+.form-row textarea {
+    resize: vertical;
+}
+
+.inquiry-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--royal);
+    color: white;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.inquiry-btn:hover {
+    background-color: var(--navy);
+}
+
+@media (max-width: 600px) {
+    .inquiry-form {
+        padding: 22px;
+    }
+}
